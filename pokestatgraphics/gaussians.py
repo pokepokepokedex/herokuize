@@ -1,5 +1,4 @@
 ''' ''' 
-from .models import df, COLOR_by_TYPE
 
 import pandas as pd # type: ignore
 import numpy as np # type: ignore
@@ -11,7 +10,7 @@ from itertools import chain
 Vcat = lambda R,S: R & S
 Ocat = lambda C,D: C + D
 
-from models import df, COLORS_by_TYPE
+from .models import df, COLORS_by_TYPE
 
 
 types = set(chain.from_iterable(df[['type1', 'type2']].values)) - {np.nan}
@@ -62,6 +61,6 @@ class PokeDescribeNAME(PokeDescribe):
                           ).configure_text(color='white', angle=90)
 
 
-VIEWS = [PokeDescribeNAME(df, n) for n in df[~df.name.isna()].name]
+VIEWS = {n: PokeDescribeNAME(df, n) for n in df[~df.name.isna()].name}
 
 

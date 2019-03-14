@@ -12,6 +12,7 @@ altair = "*"
 plotly = "*"
 pandas = "*"
 dash = "*"
+scipy = "*"
 
 [requires]
 python_version = "3.6"

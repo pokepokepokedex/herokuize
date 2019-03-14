@@ -6,11 +6,12 @@ import plotly.graph_objs as go
 import plotly.offline as pyo
 from flask import Flask, render_template, request
 
+from .models import G7
 
 server = Flask(__name__)
 app = dash.Dash(__name__, server=server, url_base_pathname='/')
 
-df = pd.read_csv("pokemon3.csv")
+df = pd.read_csv(G7)
 
 against = []
 against.append('name')
