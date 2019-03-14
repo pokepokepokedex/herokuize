@@ -1,0 +1,22 @@
+<!DOCTYPE html>                                                                                                                                                      
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+  		<title>birdup - {{ title }}</title>
+  		<!-- CSS, keywords, metadat goes here -->
+ 		<link rel="stylesheet" href="https://unpkg.com/picnic">
+	</head>
+
+
+	<body> STUFF 
+		{% block content %}
+			{% for item in dat %}
+			<p> {{ item }} </p>
+			{% endfor %}
+
+		{% endblock %}
+	
+	</body>
+
+</html>
+
