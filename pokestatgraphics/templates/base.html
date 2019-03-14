@@ -14,20 +14,15 @@
 	<body> STUFF 
 		{% block content %}
 
-		<form action="/gaussians" method="post">
-			{% if d.keys()[0] %}
-			{{ d[True].SHOW }}
+		<form action="/gaussians" method="get">
+			{% for view in d %}
+			{{ view.SHOW }}
+			{{ view.pokename }}
+			{{ view.typ }}
 			{% endif %}
 			
-			<!-- {% view.SHOW %} -->
 		</form>
 
-<!--
-
-			{% for item in views %}
-			<p> {{ item.SHOW }} </p>
-			{% endfor %}
-			-->
 		{% endblock %}
 	
 	</body>
